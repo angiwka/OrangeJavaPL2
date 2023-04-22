@@ -12,7 +12,7 @@ public class BreadRepository {
 
     private final IBreadRepository breadRepository;
 
-    List<Bread> getAllBreads() {
+    public List<Bread> getAllBreads() {
         return breadRepository.findAll();
     }
 
