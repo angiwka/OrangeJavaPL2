@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 // @Value //immutable wersja data - final
-@ConfigurationProperties
+@ConfigurationProperties(prefix = "welcome-message")
 public class WelcomeMessage {
 
     private String value;
