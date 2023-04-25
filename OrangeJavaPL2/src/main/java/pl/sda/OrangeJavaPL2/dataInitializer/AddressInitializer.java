@@ -12,13 +12,13 @@ import javax.annotation.PostConstruct;
 public class AddressInitializer {
 
     private final AddressRepository addressRepository;
+
     @PostConstruct
-    public void initAddress(){
-        Address address = new Address("Sloneczna", 1L, "27-600", "Poland");
-        Address address1 = new Address("Dzielna", 11L, "01-023", "Poland");
+    public void initAddresses(){
+        Address address = new Address("Pilsudzkiego", "10", "10-100", "Polska");
+        Address address1 = new Address("Mickiewicza", "12", "10-110", "Polska");
 
         addressRepository.addAddress(address);
         addressRepository.addAddress(address1);
-
     }
 }

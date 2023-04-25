@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 import pl.sda.OrangeJavaPL2.entity.Address;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Repository
@@ -13,14 +15,13 @@ public class AddressRepository {
 
     private final IAddressRepository addressRepository;
 
-
-    public List<Address> getAllAddress()
-    {
-        return addressRepository.findAll();
+    public void addAddress(Address address) {
+        addressRepository.save(address);
     }
 
-    public void addAddress(Address address)
-    {
-        addressRepository.save(address);
+    public Set<Address> getAllAddresses() {
+        return addressRepository.findAll()
+                .stream()
+                .collect(Collectors.toSet());
     }
 }

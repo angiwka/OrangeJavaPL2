@@ -20,22 +20,22 @@ class OrangeJavaPl2ApplicationTests {
     @Test
     void testTest() {
         Set<Bread> breads = Sets.set(
-                new Bread("Bułka z budyniem", BreadType.SWEET, BigDecimal.valueOf(4.50),
-                new Bread("Buła z budyniem", BreadType.SWEET, BigDecimal.valueOf(2.50),
-                new Bread("Buła z budyniem", BreadType.SWEET, BigDecimal.valueOf(1.50),
-                new Bread("Buła z budyniem", BreadType.SWEET, BigDecimal.valueOf(5.50),
-                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(199.50),
-                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(41.50),
-                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(4.50),
-                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(43.50),
-                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(46.50),
-                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(42.50),
-                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(43.50)
+                new Bread("Bułka z budyniem", BreadType.SWEET, BigDecimal.valueOf(4.50)),
+                new Bread("Bułka z budyniem", BreadType.SWEET, BigDecimal.valueOf(2.50)),
+                new Bread("Bułka z budyniem", BreadType.SWEET, BigDecimal.valueOf(1.50)),
+                new Bread("Bułka z budyniem", BreadType.SWEET, BigDecimal.valueOf(5.50)),
+                new Bread("Kajzerka", BreadType.WHEAT, BigDecimal.valueOf(199.5)),
+                new Bread("Kajzerka", BreadType.WHEAT, BigDecimal.valueOf(41.50)),
+                new Bread("Kajzerka", BreadType.WHEAT, BigDecimal.valueOf(4.50)),
+                new Bread("Kajzerka", BreadType.WHEAT, BigDecimal.valueOf(43.50)),
+                new Bread("Kajzerka", BreadType.WHEAT, BigDecimal.valueOf(46.50)),
+                new Bread("Kajzerka", BreadType.WHEAT, BigDecimal.valueOf(42.50)),
+                new Bread("Kajzerka", BreadType.WHEAT, BigDecimal.valueOf(43.50))
         );
+        // List / ArrayList
+// Collection - List/Set/Queue
 
-                // list - interface a ArrayList to juz konkretne implementacja tego intefejsu
-                //COLLECTION - LIST/SET/QUEUE
-// filtering kajzerki
+        // filtering kajzerki
         Set<Bread> kajzerkaBread = breads.stream()
                 .filter(bread -> bread.getName().equals("Kajzerka"))
                 .collect(Collectors.toSet());
@@ -51,7 +51,7 @@ class OrangeJavaPl2ApplicationTests {
 
         // Printing all sweets
         Set<Bread> sweetBreads = breads.stream()
-                .filter(b -> b.getBreadType().equals(BreadType.SLODKIE))
+                .filter(b -> b.getBreadType().equals(BreadType.SWEET))
                 .collect(Collectors.toSet());
         System.out.println(sweetBreads.size());
     }

@@ -8,6 +8,7 @@ import pl.sda.OrangeJavaPL2.repository.AddressRepository;
 import pl.sda.OrangeJavaPL2.repository.BreadRepository;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping(path = "/api")
@@ -15,14 +16,12 @@ import java.util.List;
 public class AddressRestController {
     private final AddressRepository addressRepository;
 
-    @GetMapping(path ="/addresses")
-    public List<Address> getAllAddress()
-    {
-        return addressRepository.getAllAddress();
+    @GetMapping(path = "/addresses")
+    public Set<Address> getAllAddresses(){
+        return addressRepository.getAllAddresses();
     }
-
     @PostMapping (path = "/addresses")
-    public void addAddress(@RequestBody Address address) {
+    public void addAddress(@RequestBody Address address){
         addressRepository.addAddress(address);
     }
 }
