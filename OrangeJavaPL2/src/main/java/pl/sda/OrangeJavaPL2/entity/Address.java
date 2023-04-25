@@ -17,6 +17,7 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
+    @Transient // umieszcza sie nad polem; to pole jest potrzebne do kodu ale nie jest potrzebne zeby zapisywac to w bazie danych
     Long number;
     String postalCode;
     String country;

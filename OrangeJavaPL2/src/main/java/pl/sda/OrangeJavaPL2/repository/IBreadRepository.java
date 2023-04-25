@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import pl.sda.OrangeJavaPL2.entity.Bread;
 
 public interface IBreadRepository extends JpaRepository<Bread,Long> {
+    Bread findByName(String name);
 }

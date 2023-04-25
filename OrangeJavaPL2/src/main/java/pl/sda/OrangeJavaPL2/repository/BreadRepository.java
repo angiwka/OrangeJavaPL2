@@ -16,7 +16,11 @@ public class BreadRepository {
         return breadRepository.findAll();
     }
 
-    public void addBread(Bread bread){
+    public void addBread(Bread bread) {
         breadRepository.save(bread);
+    }
+
+    public Bread getBreadByName(String name) {
+        return breadRepository.findByName(name);
     }
 }
