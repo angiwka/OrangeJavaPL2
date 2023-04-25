@@ -20,43 +20,56 @@ class OrangeJavaPl2ApplicationTests {
     @Test
     void testTest() {
         Set<Bread> breads = Sets.set(
-                new Bread("Bułka z budyniem", BreadType.SLODKIE, BigDecimal.valueOf(4.50),
-                new Bread("Buła z budyniem", BreadType.SLODKIE, BigDecimal.valueOf(2.50),
-                new Bread("Buła z budyniem", BreadType.SLODKIE, BigDecimal.valueOf(1.50),
-                new Bread("Buła z budyniem", BreadType.SLODKIE, BigDecimal.valueOf(5.50),
-                new Bread("Buła z budyniem", BreadType.SLODKIE, BigDecimal.valueOf(199.50),
-                new Bread("Buła z budyniem", BreadType.SLODKIE, BigDecimal.valueOf(41.50),
-                new Bread("Buła z budyniem", BreadType.SLODKIE, BigDecimal.valueOf(4.50),
-                new Bread("Buła z budyniem", BreadType.SLODKIE, BigDecimal.valueOf(43.50),
-                new Bread("Buła z budyniem", BreadType.SLODKIE, BigDecimal.valueOf(46.50),
-                new Bread("Buła z budyniem", BreadType.SLODKIE, BigDecimal.valueOf(42.50),
-                new Bread("Buła z budyniem", BreadType.SLODKIE, BigDecimal.valueOf(43.50)
+                new Bread("Bułka z budyniem", BreadType.SWEET, BigDecimal.valueOf(4.50),
+                new Bread("Buła z budyniem", BreadType.SWEET, BigDecimal.valueOf(2.50),
+                new Bread("Buła z budyniem", BreadType.SWEET, BigDecimal.valueOf(1.50),
+                new Bread("Buła z budyniem", BreadType.SWEET, BigDecimal.valueOf(5.50),
+                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(199.50),
+                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(41.50),
+                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(4.50),
+                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(43.50),
+                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(46.50),
+                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(42.50),
+                new Bread("Buła z budyniem", BreadType.WHEAT, BigDecimal.valueOf(43.50)
         );
 
-        Set<Bread> expensiveBreads = breads
-                .stream()
-                .map(p -> p.getPrice())
-                .filter(p -> p > BigDecimal.valueOf(50))
-
-
-
+                // list - interface a ArrayList to juz konkretne implementacja tego intefejsu
+                //COLLECTION - LIST/SET/QUEUE
+// filtering kajzerki
+        Set<Bread> kajzerkaBread = breads.stream()
+                .filter(bread -> bread.getName().equals("Kajzerka"))
                 .collect(Collectors.toSet());
 
-        System.out.println(expensiveBreads);
+        System.out.println(kajzerkaBread);
+        System.out.println("-----------------------------");
+
+        // Printing all kajzerka
+        breads.stream()
+                .filter(bread -> bread.getName().equals("Kajzerka"))
+                .forEach(System.out::println);
+        System.out.println("-----------------------------");
+
+        // Printing all sweets
+        Set<Bread> sweetBreads = breads.stream()
+                .filter(b -> b.getBreadType().equals(BreadType.SLODKIE))
+                .collect(Collectors.toSet());
+        System.out.println(sweetBreads.size());
     }
+
 
     @Test
     void bigDecimalTest() {
 
-        BigDecimal decimal = new BigDecimal(19.122344555);
-        BigDecimal bigDecimal = BigDecimal.valueOf(19.122344555);
 
-        System.out.println("---------------new------------");
+        BigDecimal decimal = new BigDecimal(19.12345678901);
+        BigDecimal bigDecimal = BigDecimal.valueOf(19.12345678901);
+
+        System.out.println("-------------new------------");
         System.out.println(decimal);
-        System.out.println("--------------valueOf----------");
+        System.out.println("-------------valueOf------------");
         System.out.println(bigDecimal);
+
     }
 
+
 }
-
-
