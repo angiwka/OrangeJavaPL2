@@ -5,13 +5,13 @@ import lombok.*;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Entity
-@Setter
-@Getter
-@NoArgsConstructor
+@Entity // Database entity-object to map
+@Setter // Required for entity
+@Getter // Required for entity
+@NoArgsConstructor // Required for entity
 @AllArgsConstructor
-@Table(name = "breads")
-// @Data (ma w sobie gettery, settery itp)
+@ToString
+@Table(name = "breads") // Change default name to custom one
 public class Bread {
 
     @Id // Required for entity
@@ -26,17 +26,6 @@ public class Bread {
     public Bread(String name, BreadType breadType, BigDecimal price) {
         this.name = name;
         this.breadType = breadType;
-        this.price = price;
-    }
-
-    public Bread(Long id, String name, BigDecimal price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
-
-    public Bread(String name, BigDecimal price) {
-        this.name = name;
         this.price = price;
     }
 }
